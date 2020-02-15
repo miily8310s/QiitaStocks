@@ -1,0 +1,26 @@
+import React from 'react'
+
+const Navbar = () => {
+    return (
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div className="container">
+                <a className="navbar-brand" href="#">Qiita Stocks</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div className="navbar-collapse collapse" id="navbarNav">
+                    <ul className="navbar-nav">
+                        <li className="nav-link">
+                            <a className="nav-link" href="#">Tutorials</a>
+                        </li>
+                        <li className="nav-link">
+                            <a className="nav-link" href="#">About Site</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    )
+}
+
+export default Navbar
