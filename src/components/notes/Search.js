@@ -7,6 +7,24 @@ class Search extends Component {
         tagName: ''
     }
 
+    findNote = (dispatch, e) => {
+        e.preventDefault();
+        axios.get(`https://qiita.com/api/v2/items?page=1&per_page=20&query=tag%3A${this.state.tagName}`, {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+         .then(res => {
+            dispatch({
+                type: 'SEARCH_NOTES',
+                payload: res.data
+            })
+
+            this.setState({ tagName: ''})
+         })
+         .catch(err => console.log(err))
+    }
+
     onChange = (e) => {
         this.setState({ tagName: e.target.value })
     }
@@ -15,9 +33,10 @@ class Search extends Component {
         return (
             <Consumer>
                 {value => {
+                    const { dispatch } = value;
                     return (
                         <div className="card card-body my-4 p-4">
-                            <form>
+                            <form onSubmit={this.findNote.bind(this, dispatch)}>
                                 <div className="form-group">
                                     <input
                                       type="text" 
