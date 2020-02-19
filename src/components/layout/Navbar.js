@@ -8,7 +8,7 @@ const Navbar = () => {
                 <div className="navbar-collapse" id="navbarNav">
                     <ul className="nav navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link" href="#aboutsite">Tutorials</a>
+                            <a className="nav-link" href="/">Home</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#aboutsite">About Site</a>
