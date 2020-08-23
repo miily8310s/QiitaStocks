@@ -34,7 +34,6 @@ const Note = (props) => {
             {"  "}
             {note.user.id}
           </p>
-          <p className="card-subtitle pb-1"></p>
           <p style={styles.ul} className="mr-4">
             {note.body}
           </p>
@@ -49,6 +48,7 @@ const Note = (props) => {
               </a>
             </span>
           ))}
+          <p className="card-subtitle pt-3 pb-1">likes: {note.likes_count}</p>
         </div>
       </div>
     </div>
